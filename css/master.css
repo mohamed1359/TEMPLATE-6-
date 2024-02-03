@@ -1,0 +1,796 @@
+/* basic values start */
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Cairo', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --main-color: black;
+    --s-color: white;
+    --t-color: #666;
+    --main-transation: 0.3s;
+    --main-padding: 40px;
+}
+
+.container {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* basic values end */
+
+/* animation start */
+@keyframes pass {
+    100% {
+        transform: scale(1.1) translateX(2px);
+    }
+}
+
+/* animation end */
+
+
+.header {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(3, 35, 41);
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.header .logo {
+    position: relative;
+}
+
+.header .logo img {
+    width: 50px;
+}
+
+.header .logo span {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--s-color);
+    position: absolute;
+    top: 50%;
+    transform: translatey(-50%);
+}
+
+.header i {
+    display: none;
+    font-size: 20px;
+    color: var(--s-color);
+    margin-right: 10px;
+}
+
+.header .links {
+    display: flex;
+}
+
+.header .links li {
+    margin-left: 20px;
+    padding: 10px;
+    transition: var(--main-transation);
+}
+
+.header .links li:hover {
+    transform: scale(1.1) translateX(5px);
+}
+
+.header .links li a {
+    font-size: 20px;
+    color: var(--s-color);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+@media (max-width:767px) {
+    .header {
+        justify-content: space-between;
+    }
+
+    .header .links {
+        display: none;
+    }
+
+    .header i {
+        font-weight: bold;
+        color: var(--s-color);
+        display: block;
+        cursor: pointer;
+    }
+
+    .header i:hover+ul {
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: #fafafa;
+        z-index: 10;
+    }
+
+    .header .links li {
+        margin-top: 10px;
+        margin-left: 0;
+        padding: 10px;
+        font-size: 10px;
+        transition: var(--main-transation);
+    }
+
+    .header .links li:not(:last-child) {
+        border-bottom: 1px solid #eee;
+    }
+
+    .header .links li:hover {
+        transform: translateX(10px);
+    }
+
+    .header .links li a {
+        color: rgb(3, 35, 41);
+        font-size: 15px;
+        transition: var(--main-transation);
+    }
+
+}
+
+.header .e-header {
+    width: fit-content;
+    padding: 5px 10px;
+    background-color: var(--s-color);
+    border-radius: 50px;
+}
+
+.header .e-header a {
+    color: rgb(3, 35, 41);
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+@media (max-width:767px) {
+    .header .e-header {
+        display: none;
+    }
+}
+
+.section-1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    position: relative;
+}
+
+@media(max-width:767px) {
+    .section-1 {
+        grid-template-columns: minmax(200px, 1fr);
+    }
+}
+
+
+.section-1 .part-1 {
+    background-color: rgb(3, 35, 41);
+    padding: 40px 15px;
+}
+
+.section-1 .part-1 h1 {
+    max-width: 200px;
+    font-size: 40px;
+    color: var(--s-color);
+}
+
+.section-1 .part-1 p {
+    color: var(--s-color);
+    margin-bottom: 30px;
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.section-1 .part-1 a {
+    width: fit-content;
+    padding: 5px 10px;
+    transition: var(--main-transation);
+    text-transform: capitalize;
+}
+
+.section-1 .part-1 a:nth-child(3) {
+    background-color: rgb(218, 73, 73);
+    color: var(--s-color);
+    border: 1px solid rgb(218, 73, 73);
+
+}
+
+.section-1 .part-1 a:nth-child(3):hover {
+    background-color: transparent;
+    color: rgb(218, 73, 73);
+}
+
+.section-1 .part-1 a:last-child {
+    margin-left: 20px;
+    background-color: var(--s-color);
+    color: var(--main-color);
+    border: 1px solid var(--s-color);
+
+}
+
+.section-1 .part-1 a:last-child:hover {
+    background-color: transparent;
+    color: var(--s-color);
+}
+
+
+.section-1 .part-2 {
+    background-color: rgb(52, 202, 212);
+    padding: 40px 15px 0;
+}
+
+.section-1 .part-2 img {
+    display: block;
+    margin: auto;
+    width: 400px;
+    max-width: 100%;
+}
+
+.section-1 .pass {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translatey(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(3, 35, 41);
+    cursor: pointer;
+}
+
+.section-1 .pass i {
+    color: var(--s-color);
+    font-size: 20px;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.section-1 .pass:hover i {
+    animation: pass 0.3s infinite alternate;
+}
+
+@media(max-width:991px) {
+    .section-1 .pass {
+        display: none;
+    }
+}
+
+.section-2 {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.section-2 div h2 {
+    margin-bottom: 15px;
+    font-size: 30px;
+    letter-spacing: -1px;
+}
+
+.section-2 div p {
+    font-size: 18px;
+    line-height: 1.4;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    color: var(--t-color);
+
+}
+
+.section-2 div a {
+    width: fit-content;
+    padding: 5px 10px;
+    background-color: red;
+    color: var(--s-color);
+    text-transform: capitalize;
+}
+
+.section-2 div a:last-child {
+    margin-left: 10px;
+    background-color: rgb(3, 35, 41);
+    border: 1px solid rgb(3, 35, 41);
+    transition: var(--main-transation);
+}
+
+.section-2 div a:last-child:hover {
+    background-color: transparent;
+    color: rgb(3, 35, 41);
+}
+
+.section-2 div a:not(:last-child) {
+    background-color: rgb(218, 73, 73);
+    border: 1px solid rgb(218, 73, 73);
+    transition: var(--main-transation);
+}
+
+.section-2 div a:not(:last-child):hover {
+    background-color: transparent;
+    color: rgb(218, 73, 73);
+}
+
+@media (max-width:991px) {
+    .section-2 {
+        flex-direction: column-reverse;
+    }
+
+    .section-2 div h2 {
+        font-size: 25px;
+    }
+
+    .section-2 div h2,
+    .section-2 div p {
+        text-align: center;
+    }
+
+    .section-2 div img {
+        max-width: 100%;
+    }
+}
+
+.section-3 {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    background-image: linear-gradient(to left, rgb(3, 35, 41), rgb(52, 202, 212));
+}
+
+.section-3 .title {
+    position: relative;
+    width: fit-content;
+    margin: auto;
+    padding: 10px 0;
+    margin-bottom: 50px;
+    color: var(--s-color);
+    font-size: 40px;
+    text-transform: capitalize;
+}
+
+.section-3 .title::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--s-color);
+}
+
+.section-3 .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 50px;
+}
+
+.section-3 .container .skill {
+    text-align: center;
+}
+
+.section-3 .container .skill i {
+    font-size: 60px;
+    margin-bottom: 20px;
+    color: var(--s-color);
+}
+
+.section-3 .container .skill p {
+    font-size: 20px;
+    color: var(--s-color);
+    text-transform: capitalize;
+}
+
+.section-4 img {
+    display: block;
+    margin: auto;
+    width: 600px;
+}
+
+@media(max-width:767px) {
+    .section-4 img {
+        max-width: 100%;
+    }
+}
+
+.section-4 h1,
+.section-4 p {
+    text-align: center;
+}
+
+.section-4 h1 {
+    letter-spacing: -1px;
+    margin-top: 0;
+}
+
+.section-4 p {
+    color: var(--t-color);
+    font-size: 17px;
+    line-height: 1.4;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.section-4 a {
+    display: block;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: fit-content;
+    padding: 10px;
+    background-color: rgb(218, 73, 73);
+    border: 1px solid rgb(218, 73, 73);
+    color: var(--s-color);
+    text-transform: capitalize;
+    transition: var(--main-transation);
+
+}
+
+.section-4 a:hover {
+    background-color: transparent;
+    color: rgb(218, 73, 73);
+}
+
+.section-5 {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+
+.section-5 .container h1 {
+    text-transform: capitalize;
+    letter-spacing: -2px;
+}
+
+.section-5 .container .details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-5 .container .details .price {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.section-5 .container .details .price .price-1 {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.section-5 .container .details .price span {
+    content: "\f121";
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgb(3, 35, 41);
+    border: 1px solid var(--s-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--main-transation);
+}
+
+.section-5 .container .details .price span:hover {
+    background-color: rgb(52, 202, 212);
+}
+
+.section-5 .container .details .price span i {
+    color: var(--s-color);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.section-5 .container .details .price p:first-child {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: -2px;
+    color: rgb(218, 73, 73);
+}
+
+.section-5 .container .details .price p:last-child {
+    font-size: 28px;
+    font-weight: bold;
+    color: rgb(3, 35, 41);
+    letter-spacing: -2px;
+}
+
+.section-5 .container .details img {
+    width: 500px;
+    max-width: 100%;
+}
+
+@media(max-width:991px) {
+    .section-5 .container h1 {
+        text-align: center;
+    }
+
+    .section-5 .container .details {
+        flex-direction: column-reverse;
+        gap: 30px;
+    }
+
+    .section-5 .container .details .price .price-1 {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .section-5 .container .details .price .price-1 div p {
+        text-align: center;
+    }
+}
+
+.foot {
+    color: white;
+    background-color: rgb(3, 35, 41);
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+@media (max-width:767px) {
+    .foot {
+        text-align: center;
+        gap: 20px;
+    }
+}
+
+.foot .name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.foot .name img {
+    width: 60px;
+}
+
+.foot .name span {
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.foot .name span::first-letter {
+    color: rgb(52, 202, 212);
+    font-size: 40px
+}
+
+.foot .numbers img {
+    width: 66px;
+    border: 5px solid white;
+}
+
+.foot ul {
+    text-align: center;
+}
+
+.foot ul li {
+    position: relative;
+    text-align: center;
+    margin-bottom: 7px;
+    padding: 6px 0;
+    font-size: 15px;
+    text-transform: capitalize;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--main-transation);
+}
+
+.foot ul li:hover {
+    transform: scale(1.1);
+}
+
+.foot ul li::before {
+    content: "";
+    position: absolute;
+    left: 20%;
+    bottom: 0;
+    width: 60%;
+    height: 1px;
+    background-color: #eee;
+
+}
+
+.foot .connect {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.foot .connect a {
+    width: fit-content;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px;
+    border: 1px solid rgb(218, 73, 73);
+    background-color: rgb(218, 73, 73);
+    transition: var(--main-transation);
+
+}
+
+.foot .connect p {
+    text-transform: capitalize;
+    font-size: 15px;
+    color: #eee;
+    line-height: 1.4;
+    font-weight: bold;
+}
+
+@media (max-width:767px) {
+    .foot .connect {
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .foot .connect a {
+        padding: 5px;
+    }
+
+    .foot .connect p {
+        font-size: 12px;
+    }
+}
+
+
+.foot .connect a:hover {
+    background-color: transparent;
+}
+
+.login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 1px solid rgb(3, 35, 41);
+    border-radius: 10px;
+}
+
+.login .button_2 {
+    display: flex;
+    justify-content: center;
+}
+
+.login .button_2 input {
+    padding: 10px;
+    cursor: pointer;
+    background-color: red;
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    transition: var(--main-transation);
+}
+
+.login .button_2 input:first-child {
+    background-color: rgb(52, 202, 212);
+    color: rgb(3, 35, 41);
+    border: 1px solid rgb(52, 202, 212);
+}
+
+.login .button_2 input:first-child:hover {
+    background-color: #eee;
+}
+
+.login .button_2 input:last-child {
+    background-color: rgb(3, 35, 41);
+    color: white;
+    border: 1px solid rgb(3, 35, 41);
+    margin-left: 5px;
+}
+
+.login .button_2 input:last-child:hover {
+    background-color: #eee;
+    color: rgb(3, 35, 41);
+}
+
+.login h2 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    font-size: 25px;
+    color: rgb(3, 35, 41);
+}
+
+.login .inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.login .inputs input {
+    border: none;
+    outline: none;
+    caret-color: rgb(3, 35, 41);
+    padding: 10px 5px;
+    border-radius: 10px;
+}
+
+.login .inputs input::placeholder {
+    color: rgb(3, 35, 41);
+    font-size: 14px;
+    letter-spacing: -1px;
+    text-transform: capitalize;
+}
+
+.login .inputs button {
+    padding: 10px;
+    background-color: rgb(3, 35, 41);
+    color: white;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.back {
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+.back i {
+    font-size: 25px;
+
+}
+
+
+.back a {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.back i,
+.back a {
+    color: rgb(218, 73, 73);
+}
